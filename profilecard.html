@@ -1,0 +1,177 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
+
+        .main {
+            display: block;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .cardlayout {
+            width: 300px;
+            height: auto;
+            -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            border-radius: 20px;
+        }
+
+        .wrapper {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        .image--cover {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* margin: 20px; */
+            object-fit: cover;
+            /* object-position: center right; */
+            cursor: pointer;
+        }
+
+        .cardname {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .carddetails {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .social {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+
+        @media screen and (max-width:768px) {
+            .cardlayout {
+                width: 270px;
+                /* height: 350px; */
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                border-radius: 20px;
+            }
+
+            .image--cover {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .cardname {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .carddetails {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .social {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .fa {
+                padding: 10px;
+                font-size: 20px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 50%;
+            }
+
+            .fa-facebook {
+                background: #3B5998;
+                color: white;
+            }
+
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+
+            .fa-pinterest {
+                background: #cb2027;
+                color: white;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="cardlayout">
+            <div class="wrapper">
+                <img src="fasshion.jpg" class="image--cover">
+            </div>
+            <div class="cardname">
+                <h4>Jacquline</h4>
+            </div>
+            <div class="carddetails">
+                <h4>Hello I'm Jacquline Dcoz from Italy
+                </h4>
+                <h3>
+                    fASHIOn & Designer
+                </h3>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-pinterest"></a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
