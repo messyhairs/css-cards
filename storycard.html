@@ -1,0 +1,326 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
+
+        .main {
+            display: block;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .cardlayout {
+            width: 500px;
+            /* height: 400px; */
+            -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            border-radius: 20px;
+            /* overflow-y: scroll; */
+        }
+
+        .wrapper {
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        .image--cover {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* margin: 20px; */
+            object-fit: cover;
+            /* object-position: center right; */
+            -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            cursor: pointer;
+        }
+
+        .cardname {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .readstory {
+            font-family: 'Muli', sans-serif;
+            padding: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            position: fixed;
+        }
+
+        .carddetails {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .social {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+
+        .sidenav {
+            height: 390px;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            text-align: center;
+            -webkit-box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+            box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+            border-radius: 20px;
+        }
+
+        .sidenav a {
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+
+        }
+
+        .sidenav .closebtn {
+            position: fixed;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .morebout {
+            color: white;
+            font-family: 'Muli', sans-serif;
+            font-size: 18px;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        a:focus {
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        @media screen and (max-width:768px) {
+            .cardlayout {
+                width: 270px;
+                /* height: 350px; */
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                border-radius: 20px;
+            }
+
+            .image--cover {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .cardname {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .carddetails {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .social {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .fa {
+                padding: 10px;
+                font-size: 20px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 50%;
+            }
+
+            .fa-facebook {
+                background: #3B5998;
+                color: white;
+            }
+
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+
+            .fa-pinterest {
+                background: #cb2027;
+                color: white;
+            }
+
+            .sidenav {
+                height: 375px;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+                text-align: center;
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+                box-shadow: -1px 6px 13px 0px rgba(231, 10, 121, 0.979);
+                border-radius: 20px;
+            }
+
+            .morebout {
+                color: white;
+                font-family: 'Muli', sans-serif;
+                font-size: 14px;
+                padding: 10px;
+                text-align: justify;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="cardlayout" id="cardlayout">
+            <div class="readstory">
+                <a onclick="openNav()">Read story</a>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="morebout" id="about">
+                    Hello everyone this Jacquiline Dcoz from Italy.
+                </div>
+                <div class="morebout" id="about">
+                    I'm a fashion designer i can make chill and blissing outfit for you.
+                </div>
+                <div class="morebout" id="about">
+                    Mention where you Going i will join with you.
+                </div>
+                <div class="morebout" id="about">
+                    Change a costume how you like...
+                </div>
+                <div class="morebout" id="about">
+                    We are like as 'Oscar de la Renta , Gucci , Louis Vuitton.'
+                </div>
+                <div class="morebout" id="about">
+                    We Like to travel where you are
+                </div>
+                <div class="morebout" id="about">
+                    we make costumes for Couples.
+                </div>
+                <div class="morebout" id="about">
+                    We Do best service and get small cost.
+                </div>
+            </div>
+            <div class="wrapper" id="wrapper">
+                <img src="fasshion.jpg" class="image--cover">
+            </div>
+            <div class="cardname">
+                <h4>Jacquline</h4>
+            </div>
+            <div class="carddetails">
+                <h4>Hello I'm Jacquline Dcoz from Italy
+                </h4>
+                <h3>
+                    fASHIOn & Designer
+                </h3>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-pinterest"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // function myFunction(x) {
+        //     x.classList.toggle("change");
+        // }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById('about').style.display = 'block';
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById('about').style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>
