@@ -1,0 +1,346 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .main {
+            display: block;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -40%);
+        }
+
+        .cardlayout {
+            width: 100%;
+            /* height: 400px; */
+            /* -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44); */
+            /* border-radius: 20px; */
+            /* overflow-y: scroll; */
+            margin-top: 10%;
+        }
+
+        .wrapper {
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        .image--cover {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* margin: 20px; */
+            object-fit: cover;
+            /* object-position: center right; */
+            -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+            cursor: pointer;
+        }
+
+        .cardname {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .readstory {
+            font-family: 'Muli', sans-serif;
+            padding: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            position: fixed;
+        }
+
+        .carddetails {
+            font-family: 'Muli', sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .social {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+
+        .name {
+            font-family: 'Muli', sans-serif;
+            /* text-align: center; */
+            font-size: 25;
+        }
+
+
+        .header {
+            background-color: #fff;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+            position: fixed;
+            width: 100%;
+            z-index: 3;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .header li a {
+            display: block;
+            padding: 20px 20px;
+            /* border-right: 1px solid #f4f4f4; */
+            text-decoration: none;
+            font-family: 'Muli', sans-serif;
+            color: black;
+        }
+
+        .header .logo {
+            display: block;
+            float: left;
+            font-size: 2em;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-family: 'Muli', sans-serif;
+        }
+
+        /* menu */
+
+        .header .menu {
+            clear: both;
+            max-height: 0;
+            transition: max-height .2s ease-out;
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+            padding: 28px 20px;
+            position: relative;
+            user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+            background: #333;
+            display: block;
+            height: 2px;
+            position: relative;
+            width: 18px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+            background: #333;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+            top: 5px;
+        }
+
+        .header .menu-icon .navicon:after {
+            top: -5px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+            display: none;
+        }
+
+        .header .menu-btn:checked~.menu {
+            max-height: 240px;
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon {
+            background: transparent;
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon:before {
+            transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon:after {
+            transform: rotate(45deg);
+        }
+
+        .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+        .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+            top: 0;
+        }
+
+        /* 48em = 768px */
+
+        @media (min-width: 48em) {
+            .header li {
+                float: left;
+            }
+
+            .header li a {
+                padding: 20px 30px;
+            }
+
+            .header .menu {
+                clear: none;
+                float: right;
+                max-height: none;
+            }
+
+            .header .menu-icon {
+                display: none;
+            }
+        }
+
+
+
+        @media screen and (max-width:768px) {
+            .cardlayout {
+                width: 100%;
+            }
+
+            .image--cover {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                -webkit-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .cardname {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .carddetails {
+                font-family: 'Muli', sans-serif;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .social {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .fa {
+                padding: 10px;
+                font-size: 20px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 50%;
+            }
+
+            .fa-facebook {
+                background: #3B5998;
+                color: white;
+            }
+
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+
+            .fa-pinterest {
+                background: #cb2027;
+                color: white;
+            }
+
+            .wrapper {
+                text-align: center;
+                padding-top: 10rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo">Jacquline Dcoz</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="#work">Designs</a></li>
+            <li><a href="#about">Outfit</a></li>
+            <li><a href="#careers">Dat Time</a></li>
+            <li><a href="#contact">Chill Out</a></li>
+        </ul>
+    </header>
+    <!-- <div class="main"> -->
+    <div class="cardlayout" id="cardlayout">
+        <div class="wrapper" id="wrapper">
+            <img src="fasshion.jpg" class="image--cover">
+        </div>
+        <div class="cardname">
+            <h4>Jacquline</h4>
+        </div>
+        <div class="carddetails">
+            <h4>Hello I'm Jacquline Dcoz from Italy
+            </h4>
+            <h3>
+                fASHIOn & Designer
+            </h3>
+        </div>
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+        </div>
+    </div>
+
+    <!-- </div> -->
+</body>
+
+</html>
