@@ -11,6 +11,7 @@
         body {
             margin: 0;
             overflow-x: hidden;
+            height: 100%;
         }
 
         .main {
@@ -37,6 +38,11 @@
             padding-top: 4rem;
         }
 
+        .summarywrapper {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
         .image--cover {
             width: 150px;
             height: 150px;
@@ -48,6 +54,20 @@
             -moz-box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
             box-shadow: -1px 6px 13px 0px rgba(0, 0, 0, 0.44);
             cursor: pointer;
+        }
+
+        .imagesummary {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            /* margin: 20px; */
+            object-fit: cover;
+            /* object-position: center right; */
+            -webkit-box-shadow: -1px 6px 13px 0px rgb(238, 12, 200);
+            -moz-box-shadow: -1px 6px 13px 0px rgb(238, 12, 200);
+            box-shadow: -1px 6px 13px 0px rgb(238, 12, 200);
+            cursor: pointer;
+            border: 4px solid white;
         }
 
         .cardname {
@@ -238,7 +258,58 @@
             }
         }
 
+        .summary {
+            width: 100%;
+            /* background-color: #ff4c4c; */
+            height: 100%;
+        }
 
+        .text-center {
+            text-align: center;
+            font-family: 'Muli', sans-serif;
+            padding-top: 3rem;
+            color: black;
+            font-size: 3rem;
+        }
+
+        hr.summaryline {
+            width: 25%;
+            border: 1px solid black;
+        }
+
+        hr.greyline {
+            width: 25%;
+            border: 1px solid rgb(226, 223, 223);
+        }
+
+        .aboutme {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            font-family: 'Muli', sans-serif;
+            color: black;
+            padding-top: 3rem;
+            font-size: 20px;
+            line-height: 35px;
+            /* padding-bottom: 5rem; */
+        }
+
+        .messy {
+            padding-bottom: 2rem;
+            font-size: 30px;
+        }
+
+        .wedo {
+            width: 100%;
+            /* background-color: #7d3f98; */
+            height: 100%;
+        }
+
+        .start {
+            width: 100%;
+            /* background-color: #7d3f98; */
+            height: 100%;
+        }
 
         @media screen and (max-width:768px) {
             .cardlayout {
@@ -302,6 +373,19 @@
                 text-align: center;
                 padding-top: 10rem;
             }
+
+            .aboutme {
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                font-family: 'Muli', sans-serif;
+                color: black;
+                padding: 1rem;
+                font-size: 20px;
+                line-height: 35px;
+                /* padding-bottom: 5rem; */
+                text-align: justify;
+            }
         }
     </style>
 </head>
@@ -339,7 +423,32 @@
             <a href="#" class="fa fa-pinterest"></a>
         </div>
     </div>
-
+    <hr class="summaryline">
+    <div class="summary">
+        <h3 class="text-center">Short summary</h3>
+        <div class="summarywrapper" id="wrapper">
+            <img src="fasshion.jpg" class="imagesummary">
+        </div>
+        <div class="aboutme">
+            hOwdy, guys this is Jacquline Dcoz from Italy I'm a fashion Designer i can create a
+            most charming and Eye catching fits for you.
+            We are from
+            whenever We make a design, there will be a fruit taste,
+            fruit look.
+            We have almost 250 customers, so what about you. Think twice Before you go for choose
+            outfits. we are always ready to stich a fits for you...
+            <div class="messy text-center">
+                Being messy Don't care....
+            </div>
+        </div>
+    </div>
+    <hr class="greyline">
+    <div class="wedo">
+        <h3 class="text-center">How we do</h3>
+    </div>
+    <div class="start">
+        <h3 class="text-center">Go for Factory</h3>
+    </div>
     <!-- </div> -->
 </body>
 
